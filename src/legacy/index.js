@@ -16,7 +16,7 @@ const convert10toHexa = (number10) => {
   return number10.toString(16).toUpperCase().padStart(2, "0");
 };
 
-export const pixelArtUsecase = () => {
+export const pixelArt = () => {
   const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
   const rgbTab = spreadsheet.getSheetByName(_globales.TABNAME_RGB_RAW);
   if (rgbTab === null) throw new Error("rgbTab === null");
