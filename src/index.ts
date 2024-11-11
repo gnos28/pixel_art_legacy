@@ -1,17 +1,16 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+import { pixelArtUsecase } from "./legacy";
 import { uberLogger } from "./lib/uberLogger";
 
 const onOpen = () => {
   const ui = SpreadsheetApp.getUi();
-  ui.createMenu("SCRIPTS")
-    .addItem("🔁 example", "runExampleMenuItem")
-    .addToUi();
+  ui.createMenu("SCRIPTS").addItem("🔁 pixel art", "runPixelArt").addToUi();
 };
 
-const runExampleMenuItem = () => {
+const runPixelArt = () => {
   uberLogger.init({ tabName: "LOGS" });
   try {
-    // your call to usecase here
+    pixelArtUsecase();
   } catch (error) {
     uberLogger.error((error as Error).toString());
   }
